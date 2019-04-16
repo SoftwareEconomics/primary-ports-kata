@@ -1,0 +1,24 @@
+{
+  "name": "primary-ports-kata",
+  "version": "1.0.0",
+  "description": "Encuesta previa:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisartola/primary-ports-kata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisartola/primary-ports-kata/issues"
+  },
+  "homepage": "https://github.com/luisartola/primary-ports-kata#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jest": "^24.7.1",
+    "readline-sync": "^1.4.9"
+  }
+}
