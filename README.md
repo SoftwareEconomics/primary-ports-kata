@@ -4,14 +4,11 @@
 - The architecture is already delivered
 - This kata is about experiencing the benefits of the architecture
 
-## Concepts (flash cards, flipped classroom)
+## Concepts
 
-- Hexagonal: In hexagonal architecture there are six...
-- Ports and adapters
-- Three layers architecture
-- Three layers versus Ports and adapters
-- Primary Ports
-- Secondary Ports
+- [Concepts as flash cards](./docs/flash-cards.pdf)
+- [Developed with Marp](https://github.com/marp-team/marp)
+- RSVP and flipped classroom
 
 ## Readings
 
@@ -24,10 +21,9 @@
 ### Features and architecture are decoupled
 
 - evolve web adapter without developing new features
-- develop new features 
-- check that automatically exposed throw ports.
-- web framework only in one file
-- console framework only in one file
+- develop new features
+- check that automatically exposed throw ports, without adding new lines to adapters
+- web framework only in one file, console framework only in one file
 
 ### Easier end-to-end testing
 
@@ -39,4 +35,3 @@
 - add error management
 - add web auth
 - add persistence repo (secondary port)
-
