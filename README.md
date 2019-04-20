@@ -7,8 +7,8 @@
 ## Concepts
 
 - [Concepts as flash cards](./docs/flash-cards.pdf)
-- [Developed with Marp](https://github.com/marp-team/marp)
 - RSVP and flipped classroom
+- [Developed with Marp](https://github.com/marp-team/marp)
 
 ## Readings
 
