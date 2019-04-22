@@ -1,12 +1,12 @@
 module.exports = port => {
   return {
-    routes: [],
-    register: (routes) => {
-      this.routes = routes;
+      features: [],
+    register: (features) => {
+      this.features = features;
     },
     start: () => {
       port((action, numbers) => {
-        return this.routes[action]({
+        return this.features[action]({
           data: numbers.split(',')
               .map(n => parseInt(n, 10))
         });

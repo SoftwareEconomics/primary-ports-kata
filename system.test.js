@@ -1,11 +1,11 @@
 const system = require('./system');
-const routes = require('./routes');
+const features = require('./features');
 const Adapter = require('./adapter/memory');
 
 const adapter = Adapter();
 
 const app = system(adapter.register);
-app.register(routes);
+app.register(features);
 app.start();
 
 test('system sums', () => {
