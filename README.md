@@ -18,6 +18,21 @@
 
 ## Deliberate practice
 
+### Acoplamiento: ¿qué afecta a qué?
+
+Implementar validación:
+
+- afecta a puertos y adaptadores 
+- ver qué al refactorizarla no hay que cambiar test
+
+Implementar nueva feature: la división
+
+- no afecta adaptadores 
+
+Implementar autenticación web
+
+- afecta solo a adaptador web
+
 ### Features and architecture are decoupled
 
 - evolve web adapter without developing new features
