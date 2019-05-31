@@ -1,3 +1,9 @@
+/**
+ * This class represents a vertical module of features in our application.
+ *
+ * Vertical modules are identified by a name and gather features that have
+ * some domain concept in common.
+ */
 class Vertical {
   constructor(name, features) {
     this.name = name;

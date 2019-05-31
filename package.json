@@ -1,21 +1,23 @@
 {
   "name": "primary-ports-kata",
   "version": "1.0.0",
-  "description": "Encuesta previa:",
-  "main": "index.js",
+  "description": "Software Economics - Primary Ports Kata",
+  "main": "src/application.js",
   "scripts": {
-    "test": "mocha src/**/*.spec.js"
+    "test": "mocha src/**/*.spec.js",
+    "launch-console": "node src/launcher-console.js",
+    "launch-web-server": "node src/launcher-web-server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luisartola/primary-ports-kata.git"
+    "url": "git+https://github.com/softwareeconomics/primary-ports-kata.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/luisartola/primary-ports-kata/issues"
+    "url": "https://github.com/softwareeconomics/primary-ports-kata/issues"
   },
-  "homepage": "https://github.com/luisartola/primary-ports-kata#readme",
+  "homepage": "https://github.com/softwareeconomics/primary-ports-kata#readme",
   "dependencies": {
     "express": "^4.16.4",
     "inquirer": "^6.3.1"
