@@ -1,7 +1,5 @@
-const system = require('./application');
-const features = require('./verticals/features');
+const application = require('./application');
+
 const console = require('./primary-ports/console');
 
-const app = system(console);
-app.register(features);
-app.start();
+application.start(console);

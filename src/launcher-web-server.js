@@ -1,15 +1,4 @@
-const system = require('./system');
-const features = require('./features');
-const adapter = require('./adapter/web');
+const application = require('./application');
+const webServer = require('./primary-ports/web-server');
 
-/*
-
- Responds to:
- - http://localhost:3000/action/sum/?numbers=2,5
- - http://localhost:3000/action/mul/?numbers=2,5
-
- */
-
-const app = system(adapter);
-app.register(features);
-app.start();
+application.start(webServer);

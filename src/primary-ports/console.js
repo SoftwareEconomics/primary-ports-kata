@@ -1,10 +1,12 @@
+const PrimaryPort = require('./primary-port');
 const readlineSync = require('readline-sync');
 
-module.exports = (callback) => {
+module.exports = new PrimaryPort(callback => {
   while (true) {
-    const action = readlineSync.question('Action: ');
-    const numbers = readlineSync.question('Numbers: ');
-    const result = callback(action, numbers);
+    const vertical = readlineSync.question('Vertical: ');
+    const feature = readlineSync.question('Feature: ');
+    const data = JSON.parse(readlineSync.question('Data: '));
+    const result = callback(vertical, feature, data);
     console.log(result);
   }
-};
+});

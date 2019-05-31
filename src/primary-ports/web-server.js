@@ -1,14 +1,16 @@
+const PrimaryPort = require('./primary-port');
 const express = require('express');
 const exp = express();
 const port = 3000;
 
-module.exports = (callback) => {
-  exp.get('/action/:action', (req, res) => {
-    const action = req.param('action');
-    const numbers = req.query.numbers;
-    const result = callback(action, numbers);
-    res.send(result.toString());
+module.exports = new PrimaryPort(callback => {
+  exp.get('/:vertical/:feature', (req, res) => {
+    const vertical = req.param('vertical');
+    const feature = req.param('feature');
+    const data = JSON.parse(req.query.data);
+    const result = callback(vertical, feature, data);
+    res.send(200, result);
   });
 
   exp.listen(port, () => console.log(`Example app listening on port ${port}!`));
-};
+});
