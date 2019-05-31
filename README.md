@@ -38,7 +38,7 @@ Implementar autenticación web
 - evolve web adapter without developing new features
 - develop new features
 - check that automatically exposed throw ports, without adding new lines to adapters
-- web framework only in one file, console framework only in one file
+- web framework only in one file, consoleLauncher framework only in one file
 
 ### Easier end-to-end testing
 

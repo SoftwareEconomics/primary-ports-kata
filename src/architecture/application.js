@@ -2,12 +2,21 @@
  * This class represents a Ports&Adapters application
  */
 class Application {
-  constructor(onStart) {
-    this.onStart = onStart;
+  constructor(verticals) {
+    this.verticals = verticals;
+  }
+
+  onRequest(callback) {
+    this.onRequestCallback = callback;
+    return this;
   }
 
   start(primaryPort) {
-    this.onStart(primaryPort);
+    primaryPort
+      .setUp(this.verticals)
+      .onRequest(this.onRequestCallback)
+      .start();
+    return this;
   }
 }
 

@@ -5,8 +5,8 @@
   "main": "src/primary-ports-kata-app.js",
   "scripts": {
     "test": "mocha src/**/*.spec.js",
-    "launch-console": "node src/launchers/console.js",
-    "launch-web-server": "node src/launchers/web-server.js"
+    "launch-console": "node src/launchers/console-launcher.js",
+    "launch-web-server": "node src/launchers/web-server-launcher.js"
   },
   "repository": {
     "type": "git",
