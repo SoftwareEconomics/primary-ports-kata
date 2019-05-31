@@ -4,7 +4,7 @@
   "description": "Encuesta previa:",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   "homepage": "https://github.com/luisartola/primary-ports-kata#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "inquirer": "^6.3.1",
-    "jest": "^24.7.1"
+    "inquirer": "^6.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "should": "^13.2.3"
   }
 }
