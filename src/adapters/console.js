@@ -1,4 +1,4 @@
-const PrimaryPort = require('./primary-port');
+const PrimaryPort = require('../architecture/primary-port');
 const inquirer = require("inquirer");
 
 module.exports = new PrimaryPort(async callback => {

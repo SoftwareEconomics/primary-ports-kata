@@ -2,11 +2,11 @@
   "name": "primary-ports-kata",
   "version": "1.0.0",
   "description": "Software Economics - Primary Ports Kata",
-  "main": "src/application.js",
+  "main": "src/primary-ports-kata-app.js",
   "scripts": {
     "test": "mocha src/**/*.spec.js",
-    "launch-console": "node src/launcher-console.js",
-    "launch-web-server": "node src/launcher-web-server.js"
+    "launch-console": "node src/launchers/console.js",
+    "launch-web-server": "node src/launchers/web-server.js"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-const Vertical = require('./vertical');
-const Feature = require('./feature');
+const Vertical = require('../architecture/vertical');
+const Feature = require('../architecture/feature');
 
 module.exports = Vertical.of(
   'greeter',

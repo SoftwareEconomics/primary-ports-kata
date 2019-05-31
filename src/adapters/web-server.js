@@ -1,9 +1,7 @@
-const PrimaryPort = require('./primary-port');
-const express = require('express');
-const exp = express();
-const port = 3000;
+const PrimaryPort = require('../architecture/primary-port');
+const exp = require('express')();
 
-module.exports = new PrimaryPort(callback => {
+module.exports = port => new PrimaryPort(callback => {
   exp.get('/:vertical/:feature', (req, res) => {
     const vertical = req.param('vertical');
     const feature = req.param('feature');
@@ -12,5 +10,5 @@ module.exports = new PrimaryPort(callback => {
     res.send(200, result);
   });
 
-  exp.listen(port, () => console.log(`Example app listening on port ${port}!`));
+  exp.listen(port, () => console.log(`Example app listening on port http://localhost:${port}!`));
 });
