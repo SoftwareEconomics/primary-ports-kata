@@ -1,15 +1,11 @@
 // This module is the static definition of verticals and features of our application
 const Application = require('./architecture/application');
+const calculatorVertical = require('./verticals/calculator-vertical');
+const greeterVertical = require('./verticals/greeter-vertical');
 
-// Store the application's verticals in an indexed map for later use.
-const verticals = {};
-[
-  require('./verticals/calculator-vertical'),
-  require('./verticals/greeter-vertical')
-].forEach(vertical => verticals[vertical.name] = vertical);
-
-module.exports = () => new Application(verticals).onRequest((verticalName, featureName, data) => {
-  const vertical = verticals[verticalName];
-  const feature = vertical.resolve(featureName);
-  return feature.handle(data);
-});
+module.exports = () => {
+  const kataApp = new Application();
+  kataApp.register(calculatorVertical);
+  kataApp.register(greeterVertical);
+  return kataApp;
+};

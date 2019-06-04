@@ -27,6 +27,11 @@ const onStart = port => async adapter => {
     .listen(port, () => console.log(`Example app listening on port http://localhost:${port}!`));
 };
 
+const register = vertical => {
+  verticalsAndFeatures[vertical.name] = vertical;
+};
+
 module.exports = port => new PrimaryPort()
   .onSetUp(onSetUp)
+  .register(register)
   .onStart(onStart(port));

@@ -2,20 +2,27 @@
  * This class represents a Ports&Adapters application
  */
 class Application {
-  constructor(verticals) {
-    this.verticals = verticals;
+  constructor(primaryPort) {
+    this.primaryPort = primaryPort;
+    this.primaryPort.onRequest((verticalName, featureName, data) => {
+      const vertical = verticals[verticalName];
+      const feature = vertical.resolve(featureName);
+      return feature.handle(data);
+    });
   }
 
-  onRequest(callback) {
-    this.onRequestCallback = callback;
-    return this;
+  register(vertical) {
+    this.primaryPort.register(vertical);
   }
 
-  start(primaryPort) {
-    primaryPort
-      .setUp(this.verticals)
-      .onRequest(this.onRequestCallback)
-      .start();
+  start() {
+    this.primaryPort.start();
+      // .onRequest((verticalName, featureName, data) => {
+      //   const vertical = verticals[verticalName];
+      //   const feature = vertical.resolve(featureName);
+      //   return feature.handle(data);
+      // })
+      //.start();
     return this;
   }
 }

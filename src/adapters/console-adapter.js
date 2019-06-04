@@ -1,12 +1,8 @@
 const inquirer = require("inquirer");
 const PrimaryPort = require('../architecture/primary-port');
-const {parseInput, getVerticalAndFeatureNames} = require('./adapter-utils');
+const {parseInput} = require('./adapter-utils');
 
 let verticalsAndFeatures = {};
-
-const onSetUp = verticals => {
-  verticalsAndFeatures = getVerticalAndFeatureNames(verticals);
-};
 
 const verticalQuestion = () => ({
   name: "vertical",
@@ -43,6 +39,4 @@ const onStart = async adapter => {
   }
 };
 
-module.exports = new PrimaryPort()
-  .onSetUp(onSetUp)
-  .onStart(onStart);
+module.exports = new PrimaryPort(onStart);

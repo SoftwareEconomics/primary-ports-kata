@@ -8,31 +8,14 @@
  * constructor argument.
  */
 class PrimaryPort {
-  constructor() {
-    this.onStartCallback = undefined;
-    this.onSetUpCallback = undefined;
+  constructor(onStartCallback) {
+    this.onStartCallback = onStartCallback;
     this.onRequestCallback = undefined;
-  }
-
-  onStart(callback) {
-    this.onStartCallback = callback;
-    return this;
   }
 
   start() {
     if (this.onStartCallback !== undefined)
       this.onStartCallback(this);
-    return this;
-  }
-
-  onSetUp(callback) {
-    this.onSetUpCallback = callback;
-    return this;
-  }
-
-  setUp(verticals) {
-    if (this.onSetUpCallback !== undefined)
-      this.onSetUpCallback(verticals);
     return this;
   }
 
