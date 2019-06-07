@@ -1,4 +1,4 @@
-require('should');
+require('should/should');
 const kataApp = require('./primary-ports-kata-app');
 const TestApplicationDriver = require('./architecture/test-application-driver');
 

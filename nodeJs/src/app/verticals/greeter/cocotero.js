@@ -1,5 +1,5 @@
 const express = require('express');
-const {parseInput} = require("../../adapters/adapter-utils");
+const {parseInput} = require("../../architecture/adapter-utils");
 const app = express();
 const {greet} = require('../greeter-vertical');
 

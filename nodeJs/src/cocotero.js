@@ -1,7 +1,7 @@
 const express = require('express');
-const {parseInput} = require("./adapters/adapter-utils");
+const {parseInput} = require("./app/architecture/adapter-utils");
 const app = express();
-const {sum, multiply} = require('./verticals/calculator-vertical');
+const {sum, multiply} = require('./app/verticals/calculator-vertical');
 
 app.get("/cocotero/sum", (req, res) => {
   const data = parseInput(req.query.data);

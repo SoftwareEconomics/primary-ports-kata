@@ -1,6 +1,6 @@
 const express = require('express');
-const PrimaryPort = require('../architecture/primary-port');
-const {parseInput} = require('./adapter-utils');
+const PrimaryPort = require('../app/architecture/primary-port');
+const {parseInput} = require('../app/architecture/adapter-utils');
 
 const verticals = {};
 

@@ -1,3 +1,24 @@
+- (short talk) explicación
+  - Centrar el tiro: primary ports en el contexto de hexagonal
+  - Conceptos a tocar
+    - Inversion de control: la slide del millón de dólares
+      - Atarlo a cosas concretas del código
+    - Qué cambio y a qué afecta?
+      - matriz mágica (división, auth web)
+      - Atarlo a cosas concretas del código
+- Les enseñamos el código
+- (showcase) Metemos una feature
+- (clase invertida) La mitad explica coco, la otra mitad tero
+- Listado de conceptos y explicacion ultrabreve
+- Ejericio propuesto (1 hora)
+  - 
+  -
+  -
+- Volver a repasar conceptos
+  - Comparativamente primary ports vs. arquitectura en tres capas
+
+
+
 # Primary ports kata
 
 - This kata is **not** about developing an hexagonal architecture
