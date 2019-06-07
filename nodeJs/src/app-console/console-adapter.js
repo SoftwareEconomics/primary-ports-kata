@@ -23,23 +23,26 @@ const dataQuestion = () => ({
   message: "Data"
 });
 
+const prompt = async () => {
+  const {verticalName, featureName, rawData} = await inquirer.prompt([
+    verticalQuestion(),
+    featureQuestion(),
+    dataQuestion()
+  ]);
+  const vertical = verticals[verticalName];
+  const feature = vertical.features.filter(f => f.name === featureName)[0];
+  try {
+    const result = feature.handle(parseInput(rawData));
+    console.log(result);
+    prompt();
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 module.exports = new PrimaryPort({
-  async start() {
-    while (true) {
-      const {verticalName, featureName, rawData} = await inquirer.prompt([
-        verticalQuestion(),
-        featureQuestion(),
-        dataQuestion()
-      ]);
-      const vertical = verticals[verticalName];
-      const feature = vertical.features.filter(f => f.name === featureName)[0];
-      try {
-        const result = feature.handle(parseInput(rawData));
-        console.log(result);
-      } catch (e) {
-        console.error(e);
-      }
-    }
+  start() {
+    prompt();
   },
   register(vertical) {
     verticals[vertical.name] = vertical;
