@@ -1,33 +1,16 @@
-/**
- * This class represents a primary port of our application.
- *
- * Primary ports drive applications by receving requests from the outside world
- * and adapting them to our application conventions.
- *
- * Adapters can inject their particular implementation through the requestHandler
- * constructor argument.
- */
 class PrimaryPort {
-  constructor(onStartCallback) {
-    this.onStartCallback = onStartCallback;
-    this.onRequestCallback = undefined;
+  constructor({start, register}) {
+    this.onStart = start;
+    this.onRegister = register;
   }
 
   start() {
-    if (this.onStartCallback !== undefined)
-      this.onStartCallback(this);
+    this.onStart();
     return this;
   }
 
-  onRequest(callback) {
-    this.onRequestCallback = callback;
-    return this;
-  };
-
-  handleRequest(vertical, feature, data) {
-    if (this.onRequestCallback === undefined)
-      throw new Error("No callback has been defined to handle requests");
-    return this.onRequestCallback(vertical, feature, data);
+  register(vertical) {
+    this.onRegister(vertical);
   }
 }
 

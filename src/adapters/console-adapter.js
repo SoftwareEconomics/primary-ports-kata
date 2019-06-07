@@ -2,20 +2,20 @@ const inquirer = require("inquirer");
 const PrimaryPort = require('../architecture/primary-port');
 const {parseInput} = require('./adapter-utils');
 
-let verticalsAndFeatures = {};
+const verticals = {};
 
 const verticalQuestion = () => ({
-  name: "vertical",
+  name: "verticalName",
   message: "Vertical name",
   type: "list",
-  "choices": Object.keys(verticalsAndFeatures)
+  "choices": Object.keys(verticals)
 });
 
 const featureQuestion = () => ({
-  name: "feature",
+  name: "featureName",
   message: "Feature name",
   type: "list",
-  "choices": ({vertical}) => verticalsAndFeatures[vertical]
+  "choices": ({verticalName}) => verticals[verticalName].features.map(f => f.name)
 });
 
 const dataQuestion = () => ({
@@ -23,20 +23,25 @@ const dataQuestion = () => ({
   message: "Data"
 });
 
-const onStart = async adapter => {
-  while (true) {
-    const {vertical, feature, rawData} = await inquirer.prompt([
-      verticalQuestion(),
-      featureQuestion(),
-      dataQuestion()
-    ]);
-    try {
-      const result = adapter.handleRequest(vertical, feature, parseInput(rawData));
-      console.log(result);
-    } catch (e) {
-      console.error(e);
+module.exports = new PrimaryPort({
+  async start() {
+    while (true) {
+      const {verticalName, featureName, rawData} = await inquirer.prompt([
+        verticalQuestion(),
+        featureQuestion(),
+        dataQuestion()
+      ]);
+      const vertical = verticals[verticalName];
+      const feature = vertical.features.filter(f => f.name === featureName)[0];
+      try {
+        const result = feature.handle(parseInput(rawData));
+        console.log(result);
+      } catch (e) {
+        console.error(e);
+      }
     }
+  },
+  register(vertical) {
+    verticals[vertical.name] = vertical;
   }
-};
-
-module.exports = new PrimaryPort(onStart);
+});

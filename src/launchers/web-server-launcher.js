@@ -1,4 +1,4 @@
 const kataApp = require('../primary-ports-kata-app');
 const webServer = require('../adapters/web-server-adapter');
 
-kataApp().start(webServer(3000));
+kataApp(webServer(3000)).start();

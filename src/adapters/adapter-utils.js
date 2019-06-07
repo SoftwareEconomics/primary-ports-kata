@@ -5,12 +5,4 @@ const parseInput = rawInput => {
   return input.length > 1 ? input : input[0];
 };
 
-const getVerticalAndFeatureNames = verticals => {
-  const names = {};
-  Object.values(verticals).forEach(vertical =>
-    names[vertical.name] = vertical.features.map(feature => feature.name)
-  );
-  return names;
-};
-
-module.exports = {parseInput, getVerticalAndFeatureNames};
+module.exports = {parseInput};

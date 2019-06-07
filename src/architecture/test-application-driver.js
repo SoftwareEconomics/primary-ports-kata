@@ -2,7 +2,15 @@ const PrimaryPort = require('./primary-port');
 
 class TestApplicationDriver {
   constructor() {
-    this.testAdapter = new PrimaryPort();
+    this.verticals = [];
+    this.testAdapter = new PrimaryPort({
+      start() {
+        // Do nothing
+      },
+      register: vertical => {
+        this.verticals[vertical.name] = vertical;
+      }
+    });
   }
 
   getAdapter() {
@@ -10,7 +18,9 @@ class TestApplicationDriver {
   }
 
   sendRequest(verticalName, featureName, data) {
-    return this.testAdapter.handleRequest(verticalName, featureName, data);
+    const vertical = this.verticals[verticalName];
+    const feature = vertical.features.filter(f => f.name === featureName)[0];
+    return feature.handle(data);
   }
 }
 
