@@ -1,6 +1,6 @@
 const express = require('express');
 const PrimaryPort = require('../app/architecture/primary-port');
-const {parseInput} = require('../app/architecture/adapter-utils');
+const Request = require('../app/architecture/request');
 
 const verticals = {};
 
@@ -12,7 +12,7 @@ module.exports = portNumber => {
         const vertical = verticals[req.params.verticalName];
         const feature = vertical.features.filter(f => f.name === req.params.featureName)[0];
         try {
-          const result = feature.handle(parseInput(req.query.data));
+          const result = feature.handle(new Request(req.query.data));
           res.status(200).send(result.toString());
         } catch (e) {
           console.error(e);

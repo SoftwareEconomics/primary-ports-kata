@@ -16,12 +16,12 @@ describe("The Primary Ports Kata App", () => {
   });
 
   it('Knows how to sum a pair of numbers', () => {
-    const result = testDriver.sendRequest('calculator', 'sum', [1, 2]);
+    const result = testDriver.sendRequest('calculator', 'sum', "1, 2");
     result.should.eql(3);
   });
 
   it('Knows how to multiply a pair of numbers', () => {
-    const result = testDriver.sendRequest('calculator', 'multiply', [2, 3]);
+    const result = testDriver.sendRequest('calculator', 'multiply', "2, 3");
     result.should.eql(6);
   });
 });

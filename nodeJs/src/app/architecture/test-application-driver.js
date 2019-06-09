@@ -1,4 +1,5 @@
 const PrimaryPort = require('./primary-port');
+const Request = require('./request');
 
 class TestApplicationDriver {
   constructor() {
@@ -20,7 +21,7 @@ class TestApplicationDriver {
   sendRequest(verticalName, featureName, data) {
     const vertical = this.verticals[verticalName];
     const feature = vertical.features.filter(f => f.name === featureName)[0];
-    return feature.handle(data);
+    return feature.handle(new Request(data));
   }
 }
 

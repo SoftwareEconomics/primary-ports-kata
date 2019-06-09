@@ -3,5 +3,5 @@ const Feature = require('../architecture/feature');
 
 module.exports = Vertical.of(
   'greeter',
-  new Feature("greet", name => `Hi, ${name}!`)
+  new Feature("greet", request => `Hi, ${request.get()}!`)
 );

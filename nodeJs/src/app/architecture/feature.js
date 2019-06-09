@@ -4,8 +4,8 @@ class Feature {
     this.handler = handler;
   }
 
-  handle(data) {
-    return this.handler(data);
+  handle(request) {
+    return this.handler(request);
   }
 }
 

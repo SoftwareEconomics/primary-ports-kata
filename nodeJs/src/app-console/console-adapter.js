@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const PrimaryPort = require('../app/architecture/primary-port');
-const {parseInput} = require('../app/architecture/adapter-utils');
+const Request = require('../app/architecture/request');
 
 const verticals = {};
 
@@ -32,7 +32,7 @@ const prompt = async () => {
   const vertical = verticals[verticalName];
   const feature = vertical.features.filter(f => f.name === featureName)[0];
   try {
-    const result = feature.handle(parseInput(rawData));
+    const result = feature.handle(new Request(rawData));
     console.log(result);
     prompt();
   } catch (e) {
