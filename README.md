@@ -12,7 +12,7 @@
 
 ## Readings
 
-- [The original post that started all](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
+- [The original post that started it all](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
 - [A book we like about ports and adapters](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
 
 ## Deliberate practice exercises
