@@ -36,7 +36,7 @@
 Here are some ideas to try by yourself:
 
 - Implement authentication inside your hexagon
-- Log the history of request using a secondary port e.g. `RequestLogRepository`
+- Log the request history with a secondary port e.g. `RequestLogRepository`
 - Change the primary port so that you can avoid exposing particular features in your adapters
 - Segregate requests into queries and commands
   - Do you see any relation between _Ports and Adapters_ and [_CQRS_](https://martinfowler.com/bliki/CQRS.html)?
