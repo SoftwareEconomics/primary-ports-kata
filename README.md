@@ -1,8 +1,8 @@
 # Primary ports kata
 
-- This kata is **not** about developing an hexagonal architecture
-- The architecture is already delivered
-- This kata is about experiencing the architecture benefits and trade-offs
+- This kata is **not** about implementing an hexagonal architecture
+- There is an architecture already in place
+- This kata is about having a first-hand experience of the benefits and trade-offs of the architecture
 
 ## Concepts
 
@@ -10,51 +10,53 @@
 - [Concepts](./docs/flash-cards.pdf)
 - [You can edit the markdown with Marp](https://github.com/marp-team/marp)
 
-## Readings
+## Reading list
 
-- [Original Blog post](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
-- [Best book about ports and adapters](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
+- [The original post that started it all](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
+- [A book we like about ports and adapters](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
 
+## Deliberate practice exercises
 
-## Deliberate practice
+### Add a new feature: division
 
-### new feature: division (add tests and implementation)
+- Hint: don't forget about writing tests!
+- Check: there's no need to change the delivery. New features are automatically delivered though the web and console adapters
 
-- check: features are automatically delivered to web and console 
+### Add validation: division by zero is not allowed
 
-### add validation: division by zero is not allowed
+- Hint: the adapters should _adapt_ the error accordingly e.g web responds with a 4xx status code
+- Check: By using the _outside-in_ mindset, tests don't need to know the specifics about the validation implementation and they can focus exclusively on its visible effects.
 
-- hint: adapt error reporting to web (response code) and console (color: red)
-- check: outside-in thinking. Tests knows nothing about validation implementation. Which are visible effects of validation error?
+### Change the web route pattern from `vertical/feature` to `vertical-feature`
 
-### Web api change:  "vertical/feature" to "vertical-feature"
+- Check: changing all the web urls only requires changing one line of code
 
-- check: changing all url's of your web services changing only one line of code
+### Free exploration ideas
 
-### Explore: extra exercises
+Here are some ideas to try by yourself:
 
-Explore the architecture as you wish. Some ideas:
+- Implement authentication inside your hexagon
+- Log the request history with a secondary port e.g. `RequestLogRepository`
+- Change the primary port so that you can avoid exposing particular features in your adapters
+- Segregate requests into queries and commands
+  - Do you see any relation between _Ports and Adapters_ and [_CQRS_](https://martinfowler.com/bliki/CQRS.html)?
+  - Once you've done that, can you think of new delivery strategies you can follow?
 
-- Hexagonal Authentication (no web or console).
-- Secondary port: store all request in a RequestLogRepository
-- All features are explosed to console and web: how can i limit that?
-- Divide request in queries and actions (CQRS): what is the relation between Ports and Adapters and CQRS?
+## Discussion
 
-## Discuss
+_Ports and Adapters_: features and architecture are decoupled so:
 
-Ports and Adapters: features and architecture are decoupled so...
+- [ ] I can develop features without having to be aware of the architecture, and viceversa
+- [ ] I can test features without worrying about how they're delivered
 
-- ... i can develop features without architecture and viceversa
-- ... i can test features without bothering about delivery details
+Compare these options:
 
-Compare three options:
+- _Classic_ layered architecture
+- _Ports and Adapters_ with one adapter for each feature
+- _Ports and Adapters_ with one primary port for all features
 
-- "classic" layered architecture
-- Ports and Adapters with one adapter for each feature
-- Ports and Adapters with one primary port for all features
+About dependencies:
 
-Dependency...
-
-- ... Dependency inversion ?? Inversion of Control ?? DIP ??
+- Dependency inversion? Inversion of Control? DIP?
 - [DIP in the Wild](https://martinfowler.com/articles/dipInTheWild.html)
 
