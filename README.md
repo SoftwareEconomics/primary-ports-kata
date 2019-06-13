@@ -10,7 +10,7 @@
 - [Concepts](./docs/flash-cards.pdf)
 - [You can edit the markdown with Marp](https://github.com/marp-team/marp)
 
-## Readings
+## Reading list
 
 - [The original post that started it all](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
 - [A book we like about ports and adapters](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
