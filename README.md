@@ -1,35 +1,14 @@
-- (short talk) explicación
-  - Centrar el tiro: primary ports en el contexto de hexagonal
-  - Conceptos a tocar
-    - Inversion de control: la slide del millón de dólares
-      - Atarlo a cosas concretas del código
-    - Qué cambio y a qué afecta?
-      - matriz mágica (división, auth web)
-      - Atarlo a cosas concretas del código
-- Les enseñamos el código
-- (showcase) Metemos una feature
-- (clase invertida) La mitad explica coco, la otra mitad tero
-- Listado de conceptos y explicacion ultrabreve
-- Ejericio propuesto (1 hora)
-  - 
-  -
-  -
-- Volver a repasar conceptos
-  - Comparativamente primary ports vs. arquitectura en tres capas
-
-
-
 # Primary ports kata
 
 - This kata is **not** about developing an hexagonal architecture
 - The architecture is already delivered
-- This kata is about experiencing the benefits of the architecture
+- This kata is about experiencing the architecture benefits and trade-offs
 
 ## Concepts
 
-- [Concepts as flash cards](./docs/flash-cards.pdf)
-- RSVP and flipped classroom
-- [Developed with Marp](https://github.com/marp-team/marp)
+- You can use them as flash cards, RSVP or Flipped classrom
+- [Concepts](./docs/flash-cards.pdf)
+- [You can edit the markdown with Marp](https://github.com/marp-team/marp)
 
 ## Readings
 
@@ -39,35 +18,43 @@
 
 ## Deliberate practice
 
-### Acoplamiento: ¿qué afecta a qué?
+### new feature: division (add tests and implementation)
 
-Implementar validación:
+- check: features are automatically delivered to web and console 
 
-- afecta a puertos y adaptadores 
-- ver qué al refactorizarla no hay que cambiar test
+### add validation: division by zero is not allowed
 
-Implementar nueva feature: la división
+- hint: adapt error reporting to web (response code) and console (color: red)
+- check: outside-in thinking. Tests knows nothing about validation implementation. Which are visible effects of validation error?
 
-- no afecta adaptadores 
+### Web api change:  "vertical/feature" to "vertical-feature"
 
-Implementar autenticación web
+- check: changing all url's of your web services changing only one line of code
 
-- afecta solo a adaptador web
+### Explore: extra exercises
 
-### Features and architecture are decoupled
+Explore the architecture as you wish. Some ideas:
 
-- evolve web adapter without developing new features
-- develop new features
-- check that automatically exposed throw ports, without adding new lines to adapters
-- web framework only in one file, consoleLauncher framework only in one file
+- Hexagonal Authentication (no web or console).
+- Secondary port: store all request in a RequestLogRepository
+- All features are explosed to console and web: how can i limit that?
+- Divide request in queries and actions (CQRS): what is the relation between Ports and Adapters and CQRS?
 
-### Easier end-to-end testing
+## Discuss
 
-- test logic without testing delivery mechanism
-- test delivery mechanism without testing logic
+Ports and Adapters: features and architecture are decoupled so...
 
-### More realistic example
+- ... i can develop features without architecture and viceversa
+- ... i can test features without bothering about delivery details
 
-- add error management
-- add web auth
-- add persistence repo (secondary port)
+Compare three options:
+
+- "classic" layered architecture
+- Ports and Adapters with one adapter for each feature
+- Ports and Adapters with one primary port for all features
+
+Dependency...
+
+- ... Dependency inversion ?? Inversion of Control ?? DIP ??
+- [DIP in the Wild](https://martinfowler.com/articles/dipInTheWild.html)
+
