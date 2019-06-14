@@ -4,7 +4,7 @@
   "description": "Software Economics - Primary Ports Kata",
   "main": "src/app/primary-ports-kata-app.js",
   "scripts": {
-    "test": "../node_modules/.bin/mocha nodeJs/src/**/*.spec.js",
+    "test": "mocha src/**/*.spec.js",
     "launch-console": "node src/app-console/console-launcher.js",
     "launch-web-server": "node src/app-web-server/web-server-launcher.js"
   },

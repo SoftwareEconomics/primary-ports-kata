@@ -1,3 +1,6 @@
+# https://github.com/softwareEconomics
+# Wifi 1: Conferencias / ConferenciaS-2011
+# Wifi 2: PamplonaCatedral / 24092009
 # Primary ports kata
 
 - This kata is **not** about implementing an hexagonal architecture
