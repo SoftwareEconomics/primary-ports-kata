@@ -1,6 +1,4 @@
-# https://github.com/softwareEconomics
-# Wifi 1: Conferencias / ConferenciaS-2011
-# Wifi 2: PamplonaCatedral / 24092009
+ral / 24092009
 # Primary ports kata
 
 - This kata is **not** about implementing an hexagonal architecture
@@ -17,6 +15,23 @@
 
 - [The original post that started it all](https://web.archive.org/web/20090327032122/alistair.cockburn.us/Hexagonal+architecture)
 - [A book we like about ports and adapters](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
+
+## Pamplona craftsmen timing
+
+INTRODUCCIÓN Y PRIMERA PARTE
+   -  El ostíon: 15 mins: clonar repo,  npm install, levantar web/consola, pedir implementar la división sin explicar absolutamente nada.
+   - hands off:  15 mins: ¿menuda ostia eh? Explicación del código, cómo está organizado, qué habría que hacer para implementar la división.
+    - hands on: 10 mins: implementar la división. 
+    - hands off: 20 mins: arquitectura en tres capas versus un adaptador por request. En ambos casos: controlador --> servicio --> repositorio. En éste ejercicio rompemos con esa idea. Contar cosas de las notas que pongo más abajo.
+
+SEGUNDA PARTE:
+    - hands on: 15 mins: Ejercicio2: implementar validación
+    - hands on: 15 mins: Ejercicio 3: implementar cambio en las urls web
+    - nota: si hay gente que va rápido, ofrecerles implementar los "extra exercises" del README
+
+CIERRE:
+     - repasar bondades y comparar ventajas desventajas de cada implementación
+     - pedir feedback
 
 ## Deliberate practice exercises
 
