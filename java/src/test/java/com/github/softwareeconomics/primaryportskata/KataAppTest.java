@@ -8,29 +8,29 @@ import org.junit.Test;
 
 public class KataAppTest {
 
-  private FakeAdapter adapter;
+  private FakeAdapter deliveryAdapter;
 
   @Before
   public void setUp() {
-    adapter = new FakeAdapter();
-    KataApp.buildApp(adapter).start();
+    deliveryAdapter = new FakeAdapter();
+    KataApp.buildApp(deliveryAdapter, new InMemoryToDoAdapter()).start();
   }
 
   @Test
   public void knows_how_to_greet_people() {
-    String result = adapter.sendRequest("greeter", "greet", "Luigi & Guillermo");
+    String result = deliveryAdapter.sendRequest("greeter", "greet", "Luigi & Guillermo");
     assertThat(result, is("Hi, Luigi & Guillermo!"));
   }
 
   @Test
   public void knows_how_to_sum_a_list_of_integers() {
-    String result = adapter.sendRequest("calculator", "sum", "1,2,3");
+    String result = deliveryAdapter.sendRequest("calculator", "sum", "1,2,3");
     assertThat(result, is("6"));
   }
 
   @Test
   public void knows_how_to_multiply_a_list_of_integers() {
-    String result = adapter.sendRequest("calculator", "multiply", "1,2,3,4");
+    String result = deliveryAdapter.sendRequest("calculator", "multiply", "1,2,3,4");
     assertThat(result, is("24"));
   }
 }
