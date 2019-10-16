@@ -1,3 +1,5 @@
 *.iml
 node_modules
 .idea
+java/.gradle/
+java/out/
