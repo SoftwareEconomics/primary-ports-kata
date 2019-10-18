@@ -37,7 +37,10 @@ public class KataApp {
             .register(Feature.of(
                 "fetchAll",
                 request -> {
-                  return toDoAdapter.fetchAll().stream().map(ToDoEntry::getDescription).collect(joining("\n"));
+                  return toDoAdapter.fetchAll()
+                      .stream()
+                      .map(ToDoEntry::getDescription)
+                      .collect(joining("\n"));
                 }
             ))
         );
