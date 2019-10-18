@@ -32,7 +32,9 @@
 
 # Ports and adapters
 
-The main idea of Ports & Adapters is to define the structure of an application so that it could be run by different kinds of clients (humans, tests cases, other applications,…), and it could be tested in isolation from external devices of the real world that the application depends on (databases, servers, other applications, …).
+The main idea of Ports & Adapters is to define the structure of an application so that it could be run by different 
+kinds of clients (humans, tests cases, other applications,…), and it could be tested in isolation from external devices 
+of the real world that the application depends on (databases, servers, other applications, …).
 
 ----
 
@@ -52,7 +54,8 @@ Es lo mismo que Ports and adapters. En hexagonal architecture no hay seis de nad
 
 # Outside-in thinking
  
-Hacer lo contrario que DDD, que sería: Many developers focus on implementing the Domain Model before defining how it is going to be used by the external world. 
+Hacer lo contrario que DDD, que sería: Many developers focus on implementing the Domain Model before defining 
+how it is going to be used by the external world. 
 
 ----
 
@@ -62,7 +65,9 @@ Hacer lo contrario que DDD, que sería: Many developers focus on implementing th
 
 # Primary port
 
-Primary ports are the main API of the application. They are called by the primary adapters that form the user side of the application. Examples of primary ports are functions that allow you to change objects, attributes, and relations in the core logic.
+Primary ports are the main API of the application. They are called by the primary adapters that form the user 
+side of the application. Examples of primary ports are functions that allow you to change objects, attributes, 
+and relations in the core logic.
 
 ----
 
