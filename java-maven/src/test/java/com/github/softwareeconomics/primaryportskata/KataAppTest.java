@@ -13,7 +13,7 @@ public class KataAppTest {
   @Before
   public void setUp() {
     deliveryAdapter = new FakeAdapter();
-    KataApp.buildApp(deliveryAdapter, new InMemoryToDoAdapter()).start();
+    KataApp.buildApp(deliveryAdapter).start();
   }
 
   @Test
