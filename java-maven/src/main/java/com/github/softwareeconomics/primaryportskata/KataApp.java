@@ -1,7 +1,5 @@
 package com.github.softwareeconomics.primaryportskata;
 
-import static java.util.stream.Collectors.joining;
-
 public class KataApp {
   public static App buildApp(DeliveryPort deliveryAdapter) {
     return new App(deliveryAdapter)
