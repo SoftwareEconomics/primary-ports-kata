@@ -140,6 +140,7 @@ Horizontal slices align with application layers, dividing workload, initiatives,
 and development resources amongst the individual slices.
 Vertical slices divide the application layers vertically, the slices include all functionality of a particular 
 feature from the back-end to the front-end.
+
 ------
 
 # Vertical slicing
@@ -182,8 +183,7 @@ There are many ways to express the DIP:
 
 # Branch by abstraction
 
-Is a technique for making a large-scale change to a software system 
-in gradual way that allows you to release the system regularly while the change is still in-progress.
+Is a technique for making a large-scale change to a software system  in gradual way that allows you to release the system regularly while the change is still in-progress.
 
 ------
 
