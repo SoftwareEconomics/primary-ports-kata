@@ -1,5 +1,7 @@
 package com.github.softwareeconomics.primaryportskata;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -7,6 +9,7 @@ import java.util.function.Function;
 public class Feature {
   private final String name;
   private final Function<Request, String> handler;
+  public static final Logger LOGGER = LoggerFactory.getLogger("request-logger");
 
   public Feature(String name, Function<Request, String> handler) {
     this.name = name;
@@ -29,6 +32,8 @@ public class Feature {
   }
 
   public String execute(Request request) {
-    return handler.apply(request);
+    String response = handler.apply(request);
+    LOGGER.info("{} : {} -> {}", this.name, request.get(), response);
+    return response;
   }
 }

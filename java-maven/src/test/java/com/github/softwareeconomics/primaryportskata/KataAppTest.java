@@ -22,6 +22,13 @@ public class KataAppTest {
     assertThat(result, is("Hi, Luigi & Guillermo!"));
   }
 
+
+  @Test
+  public void knows_how_to_divide_two_integers() {
+    String result = deliveryAdapter.sendRequest("calculator", "div", "4,2");
+    assertThat(result, is("2"));
+  }
+
   @Test
   public void knows_how_to_sum_a_list_of_integers() {
     String result = deliveryAdapter.sendRequest("calculator", "sum", "1,2,3");

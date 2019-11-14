@@ -1,9 +1,18 @@
 package com.github.softwareeconomics.primaryportskata;
 
+import java.util.List;
+
 public class KataApp {
   public static App buildApp(DeliveryPort deliveryAdapter) {
     return new App(deliveryAdapter)
         .register(new Vertical("calculator")
+            .register(Feature.of(
+                "div",
+                request -> {
+                  List<Integer> intList = request.getIntList();
+                  return String.valueOf(intList.get(0) / intList.get(1));
+                }
+            ))
             .register(Feature.of(
                 "sum",
                 request -> {

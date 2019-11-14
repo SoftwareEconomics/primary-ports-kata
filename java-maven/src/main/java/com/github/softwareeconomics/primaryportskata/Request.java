@@ -6,6 +6,8 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.toList;
 
 public class Request {
+
+
   private final String rawData;
 
   public Request(String rawData) {

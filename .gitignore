@@ -4,3 +4,4 @@ node_modules
 java/.gradle/
 java/out/
 target
+java-maven/primary.log
