@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/softwareeconomics/primary-ports-kata#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "inquirer": "^6.3.1"
   },
   "devDependencies": {
