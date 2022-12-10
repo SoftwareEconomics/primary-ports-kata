@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/luisartola/primary-ports-kata#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jest": "^24.7.1",
     "readline-sync": "^1.4.9"
   }
